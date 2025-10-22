@@ -44,8 +44,8 @@ header h3 {
 
 header img {
     margin-top: 50px;
-    width: 100%;
-    border-radius: 50px;
+    width: 100px;
+    border-radius: 10px;
     box-shadow: 10px 10px 10px rgb(255, 255, 255);
 }
 
@@ -59,13 +59,26 @@ p {
 
 nav {
     margin-top: 50px;
-    margin-left: 50px;
-    float: left;
-    width: 20%;
     line-height: 30px;
-    position: fixed;
+    display: grid;
+    grid-template-columns: 60% 1fr;
 
+}
 
+.menu1 {
+    display: flex;
+    background: rgb(255, 255, 255);
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    text-align: left;
+}
+
+.logo img {
+    width: 110px;
+    height: 50px;
 }
 
 nav a {
