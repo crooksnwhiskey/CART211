@@ -22,8 +22,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Story+Script&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
     <!--link to social media icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -33,13 +32,21 @@
         <header>
             <nav>
                 <div class="logo">
-                    <a href="#"><img src="assets/logo.png" alt="logo" width="110" height="50"></a>
+                    <a href="index.html"><img src="assets/logo.png" alt="logo" width="110" height="50"></a>
                 </div>
 
                 <div class="menu1">
-                    <a href="index.html">MAIN</a><br>
-                    <a href="index.html">STORIES</a><br>
-                    <a href="#">ABOUT</a>
+                    <button class="close-menu">&times;</button>
+                    <a href="index.html" class="menuI">MAIN</a><br>
+                    <a href="storie1.html" class="menuI">STORIES</a><br>
+                    <a href="index.html" class="menuI_active">ABOUT</a>
+                </div>
+                <!--menu button for mobile-->
+                <div class="hamburger-menu">
+                    <button>
+                        <span class="fa fa-bars"></span>
+                    </button>
+
                 </div>
             </nav>
         </header>
@@ -59,62 +66,62 @@
                 <div class="books">
                     <figure class="im1">
                         <img src="assets/america_pageant.jpg" class="im" alt="america_pageant" loading="lazy">
-                        <figcaption>america_pageant</figcaption>
+                        <div class="hover-text">america_pageant</div>
                     </figure>
 
                     <figure class="im2">
                         <img src="assets/Chipwich_guy.jpg" class="im" alt="Chipwich_guy" loading="lazy">
-                        <figcaption>Chipwich_guy</figcaption>
+                        <div class="hover-text">Chipwich_guy</div>
                     </figure>
 
                     <figure class="im3">
                         <img src="assets/end_of_life_patient.jpg" class="im" alt="end_of_life_patient" loading="lazy">
-                        <figcaption>end_of_life_patient</figcaption>
+                        <div class="hover-text">end_of_life_patient</div>
                     </figure>
 
                     <figure class="im4">
                         <img src="assets/fake_sport.jpg" class="im" alt="fake_sport" loading="lazy">
-                        <figcaption>fake_sport</figcaption>
+                        <div class="hover-text">fake_sport</div>
                     </figure>
 
                     <figure class="im5">
                         <img src="assets/gettin_married.jpg" class="im" alt="gettin_married" loading="lazy">
-                        <figcaption>gettin_married</figcaption>
+                        <div class="hover-text">gettin_married</div>
                     </figure>
 
                     <figure class="im6">
                         <img src="assets/homework.jpg" class="im" alt="homework" loading="lazy">
-                        <figcaption>homework</figcaption>
+                        <div class="hover-text">homework</div>
                     </figure>
 
                     <figure class="im7">
                         <img src="assets/invisibility.jpg" class="im" alt="invisibility" loading="lazy">
-                        <figcaption>invisibility</figcaption>
+                        <div class="hover-text">invisibility</div>
                     </figure>
 
                     <figure class="im8">
                         <img src="assets/Mardi-Gras.jpg" class="im" alt="Mardi-Gras" loading="lazy">
-                        <figcaption>Mardi-Gras</figcaption>
+                        <div class="hover-text">Mardi-Gras</div>
                     </figure>
 
                     <figure class="im9">
                         <img src="assets/Right_and_wrong.jpg" class="im" alt="Right_and_wrong" loading="lazy">
-                        <figcaption>Right_and_wrong</figcaption>
+                        <div class="hover-text">Right_and_wrong</div>
                     </figure>
 
                     <figure class="im10">
                         <img src="assets/sketchbook.jpg" class="im" alt="sketchbook" loading="lazy">
-                        <figcaption>sketchbook</figcaption>
+                        <div class="hover-text">sketchbook</div>
                     </figure>
 
                     <figure class="im11">
                         <img src="assets/the_algorithm.jpg" class="im" alt="the_algorithm" loading="lazy">
-                        <figcaption>the_algorithm</figcaption>
+                        <div class="hover-text">the_algorithm</div>
                     </figure>
 
                     <figure class="im12">
                         <img src="assets/The_Empire.jpg" class="im" alt="The_Empire" loading="lazy">
-                        <figcaption>The_Empire</figcaption>
+                        <div class="hover-text">The_Empire</div>
                     </figure>
                 </div>
             </article>
@@ -137,19 +144,36 @@
 
             </div>
             <small>
-                <em>This website was created as part of a student project. All content and design are copyright © Alex
-                    Chardon, 2025.</em>
+                <em>© Alex Chardon, cart 211, fall 2025, assessment 5, credits: humansofnyarchive.com</em>
             </small>
             <br><br>
-            <p>
-                Sources:
-                <a href="https://www.nytimes.com/2025/05/03/magazine/ocean-vuong-interview.html">NYTimes</a>,
-                <a
-                    href="https://www.cbc.ca/radio/writersandcompany/ocean-vuong-embraces-life-after-loss-in-his-new-book-of-poems-time-is-a-mother-1.6413281">CBC</a>,
-                <a href="https://www.amazon.ca/stores/Ocean-Vuong/author/B004ODUZ2M">Amazon</a>
-            </p>
+            <div class="sources">
+                <p>
+                    Sources:
+
+                    <a href="https://humansofnyarchive.com">Text and Images</a>
+                </p>
+            </div>
         </footer>
     </div>
+    <!--script for hamburger menu-->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerButton = document.querySelector('.hamburger-menu button');
+            const closeButton = document.querySelector('.close-menu');
+            const menu1 = document.querySelector('.menu1');
+
+            // Gestion de l'ouverture du menu
+            hamburgerButton.addEventListener('click', () => {
+                menu1.classList.add('menu-deployed');
+            });
+
+            // Gestion de la fermeture du menu
+            closeButton.addEventListener('click', () => {
+                menu1.classList.remove('menu-deployed');
+            });
+        });
+    </script>
 </body>
 
 </html>
