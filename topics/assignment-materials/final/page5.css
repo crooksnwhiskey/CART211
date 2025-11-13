@@ -97,6 +97,18 @@ body {
     margin: 0 auto;
 }
 
+.links a {
+    color: #000;
+}
+
+.links a:visited {
+    color: #000;
+}
+
+.links a:hover {
+    color: blue;
+}
+
 @media (max-width: 2) {
 
 

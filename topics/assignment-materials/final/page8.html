@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telos</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="page2.css">
+</head>
+
+<body>
+    <div class="back-button">
+        <a href="index.html">Back to Start</a>
+    </div>
+
+    <div class="hamburger-menu">
+        <button><span class="fa fa-bars"></span></button>
+    </div>
+
+    <div class="menu1">
+        <button class="close-menu">&times;</button>
+        <a href="page3.html">Next Page</a>
+    </div>
+
+    <div class="center-text">
+        <p>Oh, this is awkward.<br>Sorry, I don’t remember making this page.<br>Just go to the next one, I guess.</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerButton = document.querySelector('.hamburger-menu button');
+            const closeButton = document.querySelector('.close-menu');
+            const menu1 = document.querySelector('.menu1');
+
+            hamburgerButton.addEventListener('click', () => {
+                menu1.classList.add('menu-deployed');
+            });
+
+            closeButton.addEventListener('click', () => {
+                menu1.classList.remove('menu-deployed');
+            });
+        });
+    </script>
+</body>
+
+</html>
