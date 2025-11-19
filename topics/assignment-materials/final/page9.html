@@ -23,7 +23,7 @@
 
     <div class="menu1">
         <button class="close-menu">&times;</button>
-        <a href="page3.html">Next Page</a>
+        <a id="runaway" href="page10.html">Next Page</a>
     </div>
 
     <div class="center-text">
@@ -43,6 +43,49 @@
             closeButton.addEventListener('click', () => {
                 menu1.classList.remove('menu-deployed');
             });
+
+            // === RUNAWAY LINK SCRIPT ===
+            const runaway = document.getElementById('runaway');
+            runaway.style.position = 'absolute';
+            runaway.style.left = Math.random() * (window.innerWidth - runaway.offsetWidth) + 'px';
+            runaway.style.top = Math.random() * (window.innerHeight - runaway.offsetHeight) + 'px';
+            runaway.style.transition = 'left 0.1s, top 0.1s, transform 0.2s, scale 0.2s';
+
+            document.addEventListener('mousemove', e => {
+                const offset = 120; // distance to trigger move
+                const rect = runaway.getBoundingClientRect();
+                const linkX = rect.left + rect.width / 2;
+                const linkY = rect.top + rect.height / 2;
+
+                const dx = linkX - e.clientX;
+                const dy = linkY - e.clientY;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < offset) {
+                    let moveX = dx / distance * offset * (0.5 + Math.random());
+                    let moveY = dy / distance * offset * (0.5 + Math.random());
+
+                    let newX = rect.left + moveX;
+                    let newY = rect.top + moveY;
+
+                    // keep inside viewport
+                    newX = Math.max(0, Math.min(window.innerWidth - rect.width, newX));
+                    newY = Math.max(0, Math.min(window.innerHeight - rect.height, newY));
+
+                    runaway.style.left = newX + 'px';
+                    runaway.style.top = newY + 'px';
+
+                    // random rotation and scale
+                    runaway.style.transform = `rotate(${(Math.random() - 0.5) * 40}deg) scale(${0.8 + Math.random() * 0.4})`;
+                }
+            });
+
+            // Random teleport every 2 seconds
+            setInterval(() => {
+                runaway.style.left = Math.random() * (window.innerWidth - runaway.offsetWidth) + 'px';
+                runaway.style.top = Math.random() * (window.innerHeight - runaway.offsetHeight) + 'px';
+                runaway.style.transform = `rotate(${(Math.random() - 0.5) * 50}deg) scale(${0.8 + Math.random() * 0.4})`;
+            }, 2000);
         });
     </script>
 </body>

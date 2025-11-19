@@ -5,46 +5,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Telos</title>
-
     <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="page8.css">
+    <style>
+        * {
+            cursor: none !important;
+        }
 
-    <link rel="stylesheet" href="page2.css">
+        .fake-cursor {
+            width: 20px;
+            height: 20px;
+            background: red;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        body {
+            font-family: "Smooch Sans", sans-serif;
+            font-size: larger;
+            background-color: rgb(243, 234, 234);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgb(243, 234, 234);
+            border-radius: 8px;
+            padding: 8px 16px;
+        }
+
+        .next-page {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
 </head>
 
 <body>
+
     <div class="back-button">
         <a href="index.html">Back to Start</a>
-    </div>
-
-    <div class="hamburger-menu">
-        <button><span class="fa fa-bars"></span></button>
-    </div>
-
-    <div class="menu1">
-        <button class="close-menu">&times;</button>
-        <a href="page3.html">Next Page</a>
     </div>
 
     <div class="center-text">
         <p>Oh, this is awkward.<br>Sorry, I don’t remember making this page.<br>Just go to the next one, I guess.</p>
     </div>
 
+    <div class="next-page">
+        <a href="page9.html">Next Page</a>
+    </div>
+
+    <!-- Fake cursor -->
+    <div class="fake-cursor"></div>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const hamburgerButton = document.querySelector('.hamburger-menu button');
-            const closeButton = document.querySelector('.close-menu');
-            const menu1 = document.querySelector('.menu1');
+            const fakeCursor = document.querySelector('.fake-cursor');
+            let realX = 0, realY = 0;
 
-            hamburgerButton.addEventListener('click', () => {
-                menu1.classList.add('menu-deployed');
+            // Move fake cursor (invert X only)
+            document.addEventListener('mousemove', e => {
+                realX = e.clientX;
+                realY = e.clientY;
+                const invX = window.innerWidth - realX; // inverted X
+                fakeCursor.style.left = invX + 'px';
+                fakeCursor.style.top = realY + 'px';   // Y stays normal
             });
 
-            closeButton.addEventListener('click', () => {
-                menu1.classList.remove('menu-deployed');
+            // Click at fake cursor
+            document.addEventListener('mousedown', e => {
+                const invX = window.innerWidth - realX;
+
+                // Temporarily hide the fake cursor to get the element below it
+                fakeCursor.style.display = 'none';
+                const el = document.elementFromPoint(invX, realY);
+                fakeCursor.style.display = 'block';
+
+                if (el) {
+                    if (el.tagName === 'A' || el.tagName === 'BUTTON' || el.onclick) {
+                        el.click();
+                    } else {
+                        const clickEvent = new MouseEvent(e.type, {
+                            bubbles: true,
+                            cancelable: true,
+                            clientX: invX,
+                            clientY: realY,
+                            button: e.button
+                        });
+                        el.dispatchEvent(clickEvent);
+                    }
+                }
+                e.preventDefault();
             });
+
+            document.body.style.cursor = 'none';
         });
     </script>
+
 </body>
 
 </html>

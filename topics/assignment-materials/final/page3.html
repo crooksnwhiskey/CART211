@@ -13,38 +13,37 @@
 </head>
 
 <body>
-    <div class="back-button">
-        <a href="index.html">Back to Start</a>
-    </div>
+    <div class="content">
+        <div class="back-button">
+            <a href="index.html">Back to Start</a>
+        </div>
+        <div class="glitch">
+            <div class="glitch-img"></div>
+            <div class="glitch-img"></div>
+            <div class="glitch-img"></div>
+            <div class="glitch-img"></div>
+            <div class="glitch-img"></div>
+        </div>
+        <a href="page4.html" class="content-title">Next Page</a>
+        <p class="content-text">There is always a chance to go back. Take it.</p>
 
-    <div class="hamburger-menu">
-        <button><span class="fa fa-bars"></span></button>
-    </div>
 
-    <div class="menu1">
-        <button class="close-menu">&times;</button>
-        <a href="page4.html">Next Page</a>
-    </div>
 
-    <div class="center-text">
-        <p>don't lose track of the goal</p>
-    </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const hamburgerButton = document.querySelector('.hamburger-menu button');
+                const closeButton = document.querySelector('.close-menu');
+                const menu1 = document.querySelector('.menu1');
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const hamburgerButton = document.querySelector('.hamburger-menu button');
-            const closeButton = document.querySelector('.close-menu');
-            const menu1 = document.querySelector('.menu1');
+                hamburgerButton.addEventListener('click', () => {
+                    menu1.classList.add('menu-deployed');
+                });
 
-            hamburgerButton.addEventListener('click', () => {
-                menu1.classList.add('menu-deployed');
+                closeButton.addEventListener('click', () => {
+                    menu1.classList.remove('menu-deployed');
+                });
             });
-
-            closeButton.addEventListener('click', () => {
-                menu1.classList.remove('menu-deployed');
-            });
-        });
-    </script>
+        </script>
 </body>
 
 </html>
