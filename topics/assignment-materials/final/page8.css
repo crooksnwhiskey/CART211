@@ -4,7 +4,7 @@ body {
     font-weight: 3;
     font-style: normal;
     font-size: larger;
-    background-color: rgb(243, 234, 234);
+    background-color: rgb(210, 0, 0);
     height: 100vh;
     margin: 0;
     display: flex;
@@ -14,6 +14,19 @@ body {
 
 }
 
+/* Back button */
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgb(210, 0, 0);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
 
 
 
@@ -21,7 +34,7 @@ body {
 
 /* Center text */
 .center-text {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 
 /* Back button */
@@ -29,7 +42,7 @@ body {
     position: fixed;
     top: 20px;
     left: 20px;
-    background: rgb(243, 234, 234);
+    background-color: rgb(210, 0, 0);
     border: none;
     padding: 8px 16px;
     border-radius: 8px;

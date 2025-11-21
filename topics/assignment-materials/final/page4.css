@@ -4,7 +4,7 @@ body {
     font-weight: 3;
     font-style: normal;
     font-size: larger;
-    background-color: rgb(243, 234, 234);
+    background-color: rgb(255, 73, 73);
 
     margin: 0;
     justify-content: center;
@@ -33,7 +33,7 @@ body {
     position: fixed;
     top: 20px;
     left: 20px;
-    background: rgb(243, 234, 234);
+    background-color: rgb(255, 73, 73);
     border: none;
     padding: 8px 16px;
     border-radius: 8px;
@@ -52,7 +52,7 @@ body {
 
 .hamburger-menu button {
     border: none;
-    background: rgb(255, 125, 125);
+    background: rgb(249, 249, 249);
     font-size: 1.8em;
     border-radius: 8px;
     cursor: pointer;

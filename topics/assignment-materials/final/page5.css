@@ -4,7 +4,7 @@ body {
     font-weight: 3;
     font-style: normal;
     font-size: larger;
-    background-color: rgb(243, 234, 234);
+    background-color: rgb(255, 53, 53);
     height: 100vh;
     margin: 0;
 
@@ -23,7 +23,7 @@ body {
     position: fixed;
     top: 20px;
     left: 20px;
-    background: rgb(243, 234, 234);
+    background-color: rgb(255, 53, 53);
     border: none;
     padding: 8px 16px;
     border-radius: 8px;

@@ -4,7 +4,7 @@ body {
     font-weight: 3;
     font-style: normal;
     font-size: larger;
-    background-color: rgb(243, 234, 234);
+    background-color: rgb(255, 193, 193);
     height: 100vh;
     margin: 0;
     display: flex;
@@ -23,7 +23,7 @@ body {
     position: fixed;
     top: 20px;
     left: 20px;
-    background: rgb(243, 234, 234);
+    background-color: rgb(255, 193, 193);
     border: none;
     padding: 8px 16px;
     border-radius: 8px;
@@ -84,7 +84,7 @@ body {
 /* When menu is open */
 .menu-deployed {
     display: flex;
-    background-color: rgb(243, 234, 234);
+    background-color: rgb(255, 193, 193);
 }
 
 @media (max-width: 2) {
