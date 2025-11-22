@@ -15,7 +15,7 @@ body {
 
 /* Center text */
 .center-text {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 
 /* Back button */
@@ -66,7 +66,7 @@ body {
 .menu1 a {
     padding: 20px;
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 
 .close-menu {
@@ -84,7 +84,7 @@ body {
 /* When menu is open */
 .menu-deployed {
     display: flex;
-    background-color: rgb(243, 234, 234);
+    background: rgb(255, 16, 16);
 }
 
 @media (max-width: 2) {

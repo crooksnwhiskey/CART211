@@ -25,8 +25,11 @@
 
 
     <div class="center-text">
-        <p>Below is a 50/50 chance of either restarting from the beginning or continuing on<br>It would be a shame to
-            lose all the progress you've made so far</p>
+        <p>You usually have a pretty straightforward path when it comes to user interfaces.<br>On this page, you only
+            have
+            two choices, not bad right?<br>
+            One button gets you one step closer to the end, the other sends you all the way back.<br>
+            Don't be mad at me if you get it wrong.</p>
 
         <div class="main-buttons">
 
@@ -34,6 +37,25 @@
             <a href="index.html">Next Page</a>
 
         </div>
+        <div class="menu1">
+            <button class="close-menu">&times;</button>
+            <p>WHY DO YOU KEEP LOOKING HERE</p>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const hamburgerButton = document.querySelector('.hamburger-menu button');
+                const closeButton = document.querySelector('.close-menu');
+                const menu1 = document.querySelector('.menu1');
+
+                hamburgerButton.addEventListener('click', () => {
+                    menu1.classList.add('menu-deployed');
+                });
+
+                closeButton.addEventListener('click', () => {
+                    menu1.classList.remove('menu-deployed');
+                });
+            });
+        </script>
 
 </body>
 

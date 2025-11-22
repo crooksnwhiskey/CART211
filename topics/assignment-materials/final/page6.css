@@ -16,7 +16,7 @@ body {
 
 /* Center text */
 .center-text {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 
 /* Back button */
@@ -43,7 +43,7 @@ body {
 
 .hamburger-menu button {
     border: none;
-    background: rgb(255, 125, 125);
+    background-color: rgb(253, 29, 29);
     font-size: 1.8em;
     border-radius: 8px;
     cursor: pointer;
@@ -67,7 +67,7 @@ body {
 .menu1 a {
     padding: 20px;
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 
 .close-menu {

@@ -37,6 +37,23 @@ body {
     color: rgb(255, 255, 255);
 }
 
+.links {
+    padding-left: 900px;
+}
+
+.links a {
+
+    color: #ffffff;
+}
+
+.links a:visited {
+    color: #ffffff;
+}
+
+.links a:hover {
+    color: blue;
+}
+
 /* Back button */
 .back-button {
     position: fixed;

@@ -15,7 +15,8 @@ body {
 
 /* Center text */
 .center-text {
-    color: rgb(0, 0, 0);
+    padding-top: 100px;
+    color: rgb(255, 255, 255);
 }
 
 /* Back button */
@@ -42,7 +43,7 @@ body {
 
 .hamburger-menu button {
     border: none;
-    background: rgb(255, 125, 125);
+    background-color: rgb(255, 53, 53);
     font-size: 1.8em;
     border-radius: 8px;
     cursor: pointer;
@@ -84,7 +85,7 @@ body {
 /* When menu is open */
 .menu-deployed {
     display: flex;
-    background-color: rgb(243, 234, 234);
+    background-color: rgb(255, 53, 53);
 }
 
 .links {
@@ -98,11 +99,11 @@ body {
 }
 
 .links a {
-    color: #000;
+    color: #ffffff;
 }
 
 .links a:visited {
-    color: #000;
+    color: #ffffff;
 }
 
 .links a:hover {

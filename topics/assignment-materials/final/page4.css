@@ -52,7 +52,7 @@ body {
 
 .hamburger-menu button {
     border: none;
-    background: rgb(249, 249, 249);
+    background-color: rgb(255, 73, 73);
     font-size: 1.8em;
     border-radius: 8px;
     cursor: pointer;
@@ -94,7 +94,7 @@ body {
 /* When menu is open */
 .menu-deployed {
     display: flex;
-    background-color: rgb(243, 234, 234);
+    background-color: rgb(255, 73, 73);
 }
 
 .footer {
@@ -104,7 +104,7 @@ body {
     font-size: 1.2em;
 }
 
-@media (max-width: 2) {
+@media (max-width: 2px) {
 
 
 
