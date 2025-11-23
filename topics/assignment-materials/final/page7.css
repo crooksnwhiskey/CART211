@@ -13,6 +13,10 @@ body {
     text-align: center;
 }
 
+.menu1 p {
+    color: white;
+}
+
 /* Center text */
 .center-text {
     color: rgb(255, 255, 255);
@@ -85,6 +89,20 @@ body {
 .menu-deployed {
     display: flex;
     background: rgb(255, 16, 16);
+}
+
+.main-buttons {
+    display: flex;
+    gap: 20px;
+    /* space between buttons */
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+
+.button:hover {
+    background-color: #444;
 }
 
 @media (max-width: 2) {

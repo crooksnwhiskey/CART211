@@ -21,6 +21,16 @@
         <button><span class="fa fa-bars"></span></button>
     </div>
 
+    <script>
+        const hamburgerButton = document.querySelector('.hamburger-menu button');
+        hamburgerButton.addEventListener('click', () => {
+            // use the same key as your final page
+            const count = parseInt(localStorage.getItem('menuOpens') || '0');
+            localStorage.setItem('menuOpens', count + 1);
+        });
+    </script>
+
+
 
 
 
@@ -32,30 +42,64 @@
             Don't be mad at me if you get it wrong.</p>
 
         <div class="main-buttons">
-
-            <a href="page8.html">Next Page</a>
-            <a href="index.html">Next Page</a>
-
+            <a href="page8.html" class="button">Next Page?</a>
+            <a href="index.html" class="button">Next Page?</a>
         </div>
-        <div class="menu1">
-            <button class="close-menu">&times;</button>
-            <p>WHY DO YOU KEEP LOOKING HERE</p>
-        </div>
+
         <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const hamburgerButton = document.querySelector('.hamburger-menu button');
-                const closeButton = document.querySelector('.close-menu');
-                const menu1 = document.querySelector('.menu1');
-
-                hamburgerButton.addEventListener('click', () => {
-                    menu1.classList.add('menu-deployed');
-                });
-
-                closeButton.addEventListener('click', () => {
-                    menu1.classList.remove('menu-deployed');
-                });
+            document.querySelector(".back-button").addEventListener("click", () => {
+                const count = parseInt(localStorage.getItem("backCount") || "0");
+                localStorage.setItem("backCount", count + 1);
             });
         </script>
+
+    </div>
+
+
+    </div>
+    <div class="menu1">
+        <button class="close-menu">&times;</button>
+        <p>WHY DO YOU KEEP LOOKING HERE</p>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerButton = document.querySelector('.hamburger-menu button');
+            const closeButton = document.querySelector('.close-menu');
+            const menu1 = document.querySelector('.menu1');
+
+            hamburgerButton.addEventListener('click', () => {
+                menu1.classList.add('menu-deployed');
+            });
+
+            closeButton.addEventListener('click', () => {
+                menu1.classList.remove('menu-deployed');
+            });
+        });
+    </script>
+    <script>
+        const pageName = window.location.pathname.split("/").pop();
+
+        // mark start time for this page
+        localStorage.setItem("currentPageStart", Date.now());
+        localStorage.setItem("currentPageName", pageName);
+
+        // when leaving the page
+        window.addEventListener("beforeunload", () => {
+            const start = parseInt(localStorage.getItem("currentPageStart"));
+            const name = localStorage.getItem("currentPageName");
+            const duration = Date.now() - start;
+
+            // load existing record
+            let times = JSON.parse(localStorage.getItem("pageTimes") || "{}");
+
+            // add duration
+            times[name] = (times[name] || 0) + duration;
+
+            // save it back
+            localStorage.setItem("pageTimes", JSON.stringify(times));
+        });
+    </script>
+
 
 </body>
 

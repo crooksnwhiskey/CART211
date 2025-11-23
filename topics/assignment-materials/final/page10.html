@@ -27,149 +27,34 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body>
-    <div id="wrapper">
-        <header>
-            <nav>
-                <div class="logo">
+<body class="crt">
 
-                </div>
-                <!--
-                <div class="menu1">
-                    <button class="close-menu">&times;</button>
-                    <a href="index.html" class="menuI">MAIN</a><br>
-                    <a href="storie1.html" class="menuI">STORIES</a><br>
-                    <a href="index.html" class="menuI_active">ABOUT</a>
-                </div>
-                -->
-                <!--menu button for mobile-->
+    <body>
+        <main class="crt">
+            <div class="wrapper">
+                <span class="code">
+                    <span class="pink">SURPRISE!</span> <span class="lightblue">I was farming your data!</span> <br>You
+                    made
+                    it so easy for me<br> <span class="yellow">The least I can do is share your data with you
+                        <br></span>before I
+                    share
+                    it with the whole world</span><span class="cursor">_</span>
 
-            </nav>
-        </header>
+            </div>
+            </div>
+            <div id="final-output" class="final-container"></div>
+            <script src="final.js"></script>
 
-        <section>
-            <article>
-                <h3>Welcome!</h3>
-                <p>Do you like Art? Of course you do!<br>To see the best piece of art that anyone has ever seen,
-                    <br>simply
-                    go to the next page
-                </p>
+            <a href="index.html" id="reset-button" class="back-button">Back to Start</a>
 
-                <h3><a href="page2.html" class="menuI">Next Page</a></h3>
-                <!--
-                <div class="books">
-                    <figure class="im1">
-                        <img src="assets/america_pageant.jpg" class="im" alt="america_pageant" loading="lazy">
-                        <div class="hover-text">america_pageant</div>
-                    </figure>
-
-                    <figure class="im2">
-                        <img src="assets/Chipwich_guy.jpg" class="im" alt="Chipwich_guy" loading="lazy">
-                        <div class="hover-text">Chipwich_guy</div>
-                    </figure>
-
-                    <figure class="im3">
-                        <img src="assets/end_of_life_patient.jpg" class="im" alt="end_of_life_patient" loading="lazy">
-                        <div class="hover-text">end_of_life_patient</div>
-                    </figure>
-
-                    <figure class="im4">
-                        <img src="assets/fake_sport.jpg" class="im" alt="fake_sport" loading="lazy">
-                        <div class="hover-text">fake_sport</div>
-                    </figure>
-
-                    <figure class="im5">
-                        <img src="assets/gettin_married.jpg" class="im" alt="gettin_married" loading="lazy">
-                        <div class="hover-text">gettin_married</div>
-                    </figure>
-
-                    <figure class="im6">
-                        <img src="assets/homework.jpg" class="im" alt="homework" loading="lazy">
-                        <div class="hover-text">homework</div>
-                    </figure>
-
-                    <figure class="im7">
-                        <img src="assets/invisibility.jpg" class="im" alt="invisibility" loading="lazy">
-                        <div class="hover-text">invisibility</div>
-                    </figure>
-
-                    <figure class="im8">
-                        <img src="assets/Mardi-Gras.jpg" class="im" alt="Mardi-Gras" loading="lazy">
-                        <div class="hover-text">Mardi-Gras</div>
-                    </figure>
-
-                    <figure class="im9">
-                        <img src="assets/Right_and_wrong.jpg" class="im" alt="Right_and_wrong" loading="lazy">
-                        <div class="hover-text">Right_and_wrong</div>
-                    </figure>
-
-                    <figure class="im10">
-                        <img src="assets/sketchbook.jpg" class="im" alt="sketchbook" loading="lazy">
-                        <div class="hover-text">sketchbook</div>
-                    </figure>
-
-                    <figure class="im11">
-                        <img src="assets/the_algorithm.jpg" class="im" alt="the_algorithm" loading="lazy">
-                        <div class="hover-text">the_algorithm</div>
-                    </figure>
-
-                    <figure class="im12">
-                        <img src="assets/The_Empire.jpg" class="im" alt="The_Empire" loading="lazy">
-                        <div class="hover-text">The_Empire</div>
-                    </figure>
-                </div>
-            </article>
-        </section>
--->
-                <footer>
-                    <div class="social">
-
-                        <!--social meda icons-->
-                        <!--
-                        <div class="icons-wrapper">
-
-                            <a href="#" class="fa fa-facebook"></a>
-                            <a href="#" class="fa fa-youtube"></a>
-                            <a href="#" class="fa fa-instagram"></a>
-                            <a href="#" class="fa fa-pinterest"></a>
-                            <a href="#" class="fa fa-snapchat-ghost"></a>
-
-                        </div>
-                        
-                    </div>
-                    -->
-
-                        <!--
-                    <div class="sources">
-                        <p>
-                            Sources:
-
-                            <a href="https://humansofnyarchive.com">Text and Images</a>
-                        </p>
-                    </div>
-                </footer>
-    </div>
-    -->
-                        <!--script for hamburger menu-->
-                        <!--
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const hamburgerButton = document.querySelector('.hamburger-menu button');
-            const closeButton = document.querySelector('.close-menu');
-            const menu1 = document.querySelector('.menu1');
-
-            // Gestion de l'ouverture du menu
-            hamburgerButton.addEventListener('click', () => {
-                menu1.classList.add('menu-deployed');
-            });
-
-            // Gestion de la fermeture du menu
-            closeButton.addEventListener('click', () => {
-                menu1.classList.remove('menu-deployed');
-            });
-        });
-    </script>
-    -->
+            <script>
+                document.getElementById("reset-button").addEventListener("click", () => {
+                    localStorage.removeItem("backCount");
+                    localStorage.removeItem("menuOpens");
+                    localStorage.removeItem("pageTimes");
+                });
+            </script>
+    </body>
 </body>
 
 </html>

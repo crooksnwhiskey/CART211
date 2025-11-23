@@ -42,7 +42,7 @@ body {
 
 .hamburger-menu button {
     border: none;
-    background: rgb(255, 125, 125);
+    background-color: rgb(255, 193, 193);
     font-size: 1.8em;
     border-radius: 8px;
     cursor: pointer;

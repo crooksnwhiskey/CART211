@@ -3,7 +3,8 @@ main {
 }
 
 html {
-    font-family: sans-serif;
+    font-family: "Smooch Sans",
+        sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 }
@@ -28,9 +29,10 @@ html {
 }
 
 body {
-    font-family: sans-serif;
+    font-family: "Smooch Sans",
+        sans-serif;
     min-height: 100vh;
-    color: #57585c;
+    color: #ffffff;
     color: #fff;
     background-color: #fff;
     background-color: rgb(252, 133, 133);
@@ -75,6 +77,62 @@ body {
     text-align: right;
     font-weight: 400;
     animation-delay: calc(2s + 4s * 0.25);
+}
+
+/* hamburger button menu pos */
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.hamburger-menu button {
+    border: none;
+    background-color: rgb(252, 133, 133);
+    font-size: 1.8em;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Fullscreen menu */
+.menu1 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(95, 95, 95);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.menu1 a {
+    padding: 20px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+.close-menu {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2em;
+    color: rgb(0, 0, 0);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* When menu is open */
+.menu-deployed {
+    display: flex;
+    background-color: rgb(252, 133, 133);
 }
 
 @media screen and (max-width: 55em) {
@@ -156,18 +214,18 @@ body {
 
 
 
-.button {
+.back-button {
     position: relative;
     display: inline-block;
     margin: 20px;
     z-index: 999999;
 }
 
-.button:hover {
+.back-button:hover {
     cursor: pointer;
 }
 
-.button a {
+.back-button a {
     color: white;
     font-family: Helvetica, sans-serif;
     font-weight: bold;
@@ -192,16 +250,16 @@ body {
     border-radius: 5px;
 }
 
-.button a:active {
+.back-button a:active {
     top: 10px;
     background-color: #F78900;
-
+    z-index: 111;
     -webkit-box-shadow: inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
     -moz-box-shadow: inset 0 1px 0 #FFE5C4, inset 0 -3pxpx 0 #915100;
     box-shadow: inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
 }
 
-.button:after {
+.back-button:after {
     content: "";
     height: 100%;
     width: 100%;
@@ -210,7 +268,6 @@ body {
     bottom: -15px;
     left: -4px;
     z-index: -1;
-    background-color: #2B1800;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;

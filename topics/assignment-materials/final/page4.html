@@ -14,12 +14,29 @@
 
 <body>
     <div class="back-button">
-        <a href="index.html">Back to Start</a>
+        <a href="index.html" class="back-button">Back To Start</a>
+
+        <script>
+            document.querySelector(".back-button").addEventListener("click", () => {
+                const count = parseInt(localStorage.getItem("backCount") || "0");
+                localStorage.setItem("backCount", count + 1);
+            });
+        </script>
+
     </div>
+
 
     <div class="hamburger-menu">
         <button><span class="fa fa-bars"></span></button>
     </div>
+
+    <script>
+        const hamburgerButton = document.querySelector('.hamburger-menu button');
+        hamburgerButton.addEventListener('click', () => {
+            const count = parseInt(localStorage.getItem('menuOpens') || '0');
+            localStorage.setItem('menuOpens', count + 1);
+        });
+    </script>
 
     <div class="menu1">
         <button class="close-menu">&times;</button>
@@ -53,6 +70,30 @@
     <footer>
         <a href="page5.html">Next Page</a>
     </footer>
+    <script>
+        const pageName = window.location.pathname.split("/").pop();
+
+        // mark start time for this page
+        localStorage.setItem("currentPageStart", Date.now());
+        localStorage.setItem("currentPageName", pageName);
+
+        // when leaving the page
+        window.addEventListener("beforeunload", () => {
+            const start = parseInt(localStorage.getItem("currentPageStart"));
+            const name = localStorage.getItem("currentPageName");
+            const duration = Date.now() - start;
+
+            // load existing record
+            let times = JSON.parse(localStorage.getItem("pageTimes") || "{}");
+
+            // add duration
+            times[name] = (times[name] || 0) + duration;
+
+            // save it back
+            localStorage.setItem("pageTimes", JSON.stringify(times));
+        });
+    </script>
+
 </body>
 
 </html>

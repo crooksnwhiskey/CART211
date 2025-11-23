@@ -19,19 +19,6 @@ body {
     color: rgb(255, 255, 255);
 }
 
-/* Back button */
-.back-button {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    background-color: rgb(255, 53, 53);
-    border: none;
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-size: 1em;
-    cursor: pointer;
-}
-
 /* hamburger button menu pos */
 .hamburger-menu {
     position: fixed;
@@ -64,10 +51,10 @@ body {
     z-index: 1000;
 }
 
-.menu1 a {
+.menu1 p {
     padding: 20px;
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 
 .close-menu {
@@ -87,6 +74,21 @@ body {
     display: flex;
     background-color: rgb(255, 53, 53);
 }
+
+/* Back button */
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: rgb(255, 53, 53);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+
 
 .links {
     display: grid;

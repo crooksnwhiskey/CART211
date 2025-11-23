@@ -169,6 +169,30 @@
         });
     </script>
     -->
+                        <script>
+                            const pageName = window.location.pathname.split("/").pop();
+
+                            // mark start time for this page
+                            localStorage.setItem("currentPageStart", Date.now());
+                            localStorage.setItem("currentPageName", pageName);
+
+                            // when leaving the page
+                            window.addEventListener("beforeunload", () => {
+                                const start = parseInt(localStorage.getItem("currentPageStart"));
+                                const name = localStorage.getItem("currentPageName");
+                                const duration = Date.now() - start;
+
+                                // load existing record
+                                let times = JSON.parse(localStorage.getItem("pageTimes") || "{}");
+
+                                // add duration
+                                times[name] = (times[name] || 0) + duration;
+
+                                // save it back
+                                localStorage.setItem("pageTimes", JSON.stringify(times));
+                            });
+                        </script>
+
 </body>
 
 </html>
