@@ -33,7 +33,8 @@ document.getElementById("final-output").innerHTML = `
     </ul>
 
     <p style="margin-top:2rem; opacity:0.6;">
-        You weren’t navigating this website.<br>
-        You were generating data.
+        Did you really think this site was different?<br>
+        Every site wants your data, no site is safe.
+        <br><br><br>(btw you did embarrassingly bad)
     </p>
 `;
